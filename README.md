@@ -10,7 +10,7 @@ This repository contains C++ implementations of various data structures. Each da
 
 ## Linked List
 
-- [LinkedList](LinkedList/LinkedListDemo.cpp): Implementation of a singly linked list.
+- [LinkedListDemo](LinkedList/LinkedListDemo.cpp): Implementation of a singly linked list.
 - [LinkedListReverse](LinkedList/LinkedListReverse.cpp): Code to reverse a linked list.
 - [LinkedList_toArray](LinkedList/LinkedList_toArray.cpp): Convert a linked list to an array.
 
