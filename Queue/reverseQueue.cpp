@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+using namespace std;
 #define SIZE 5
 
 class Queue {
@@ -26,14 +27,14 @@ public:
     // Function to enqueue an element into the queue
     void enQueue(int element) {
         if (isFull()) {
-            std::cout << "Queue is full\n";
+            cout << "Queue is full\n";
         } else {
             if (front == -1) {
                 front = 0;
             }
             rear++;
             items[rear] = element;
-            std::cout << "Inserted " << element << std::endl;
+            cout << "Inserted " << element << endl;
         }
     }
 
@@ -41,7 +42,7 @@ public:
     int deQueue() {
         int element;
         if (isEmpty()) {
-            std::cout << "Queue is empty\n";
+            cout << "Queue is empty\n";
             return (-1);
         } else {
             element = items[front];
@@ -51,7 +52,7 @@ public:
             } else {
                 front++;
             }
-            std::cout << "Deleted " << element << std::endl;
+            cout << "Deleted " << element << endl;
             return (element);
         }
     }
@@ -59,11 +60,11 @@ public:
     // Function to display the elements in the queue
     void display() {
         if (isEmpty()) {
-            std::cout << "Empty Queue\n";
+            cout << "Empty Queue\n";
         } else {
-            std::cout << "Front index: " << front << std::endl;
+            cout << "Front index: " << front << endl;
             for (int i = front; i <= rear; i++) {
-                std::cout << items[i] << " ";
+                cout << items[i] << " ";
             }
             std::cout << std::endl << "Rear index: " << rear << std::endl;
         }
@@ -71,7 +72,7 @@ public:
 
     // Function to reverse the queue using a stack
     void reverseQueue(Queue& q) {
-        std::stack<int> s;
+        stack<int> s;
         while (!q.isEmpty()) {
             s.push(q.front());
             q.deQueue();
@@ -92,17 +93,17 @@ int main() {
     q.enQueue(5);
 
     // Display the initial queue
-    std::cout << "Initial Queue:\n";
+    cout << "Initial Queue:\n";
     q.display();
 
     // Dequeue an element and display
     q.deQueue();
-    std::cout << "Queue after dequeuing:\n";
+    cout << "Queue after dequeuing:\n";
     q.display();
 
     // Reverse the queue and display
     q.reverseQueue(q);
-    std::cout << "Reversed Queue:\n";
+    cout << "Reversed Queue:\n";
     q.display();
 
     return 0;
